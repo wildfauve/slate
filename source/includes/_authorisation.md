@@ -209,16 +209,14 @@ The request simply requires the ID Token obtained during authorisation.
 
 ### HTTP Response
 
-```
+```json
 {
   "sub": "cec67ace-6098-4d97-bfb6-b28032e32a34",
   "email": null,
   "email_verified": true,
-  "profile": {
-    "preferred_name": "Joe+Cool",
-    "preferred_username": null,
-    "updated_at": "2016-11-02 10:53:52 +1300"
-  },
+  "preferred_name": "Joe+Cool",
+  "preferred_username": null,
+  "updated_at": "2016-11-02 10:53:52 +1300",
   "allowed_activities": [
     "lic:public_api:resource:*:*",
     "lic:pasture_measurement:resource:measurement:view"
@@ -251,3 +249,37 @@ The request simply requires the ID Token obtained during authorisation.
   ]
 }
 ```
+
+Property/Object         |  Description
+---------               |  -----------
+sub                     |
+email                   | Normally not set as LIC does not use email address for authentication
+email_verified          | Claims that the email has been verified by LIC
+preferred_name          | User's preferred name
+preferred_username      | User's user name
+allowed_activities      | An array of activity strings, representing the user's supported activities.
+context_assertions      | An array of context attributes, mapping activity to specific identifiers.
+
+
+## Logout
+
+Logout acts as a distributed logout.  The user is logged out of Identity, and any other service holding an active authorisation for the user will receive a logout API request indicating that the login has occurred.  The Relying Party should use this service when the user is expecting to be logged out of all services/systems.
+
+The Relying Party that requests the logout does not receive a callback.
+
+
+### HTTP request
+
+```
+POST /logout HTTP/1.1
+Host: id.mindainfo.io
+Authentication: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL2lkLmxpYy5jby5ueiIsInN1YiI6ImNlYzY3YWNlLTYwOTgtNGQ5Ny1iZmI2LWIyODAzMmUzMmEzNCIsImF1ZCI6IjUzYmUwZmU3NGQ2MTc0OGVlNTAyMDAwMCIsImV4cCI6MTQ4MzMwODE0OCwiYW1yIjpbXSwiaWF0IjoxNDc4MDM3NzQ4LCJhenAiOiIxZGJmNGJhOC03YzI5LTRkODctYjE2YS1kOGFkZjkwZjkwZTgifQ.xn4rk5SVzWTOmXXDJHBGnKcg_GOPUIo4L0WHcS2l62tDydan3yitg3UYXunFxhb83MgGmfWmSjuntziSBo_y2hTrKnHzjEtyB_0p4QMWOz-7jIGnYtYNVXmtf1Ps3p5kVUn5D5sKoOttP0wlD5TG04P4G7W7y0C8aRCSS5hNOIsXuKf7Fd9B3nCNFWzSGb4Ziu_iDjdFOMCQtk90TkehgRu2eJ8P2LJ30qSA126_-MIAPxlwuXU1qT3OVW6y3rpJq0p1iQriZco1plDiZrFr0BOMmYa5dyCwQT-kQGZdeMV5ZzzF6tysBEEUF-jdaKawJtD_0Rory1SR4WagD0IrxA
+Content-Type: application/x-www-form-urlencoded
+
+redirect_uri=https://example.com/logout
+```
+
+The Relying Party provides:
+
++ `redirect_uri`; this must be the same as the `logout_endpoint` configured for the client.
++ `id_token`; the token for the user can be provided as a `Bearer` Token in the `AUTHORIZATION` header or via this property.
