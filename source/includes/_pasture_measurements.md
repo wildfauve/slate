@@ -51,11 +51,11 @@ date            | The date of the measurement; in ISO8601 format.
     "_kind": "Farm"
 
 }
-```json
+```
 
 ## Paddock-level Pasture Measurement API
 
-```
+```json
 {
 
     "links": [
@@ -87,7 +87,7 @@ date            | The date of the measurement; in ISO8601 format.
 ```
 
 
-```
+```json
 {
 
     "links": [
@@ -123,7 +123,7 @@ date            | The date of the measurement; in ISO8601 format.
 }
 ```
 
-```
+```json
 {
 
     "links": [
