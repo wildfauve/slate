@@ -13,6 +13,8 @@ includes:
   - places
   - pasture_measurements
   - animal_timeline
+  - animal_metrics
+  - pasture_metrics
   - errors
 
 search: true
