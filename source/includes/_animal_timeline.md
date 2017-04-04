@@ -4,11 +4,13 @@ Animal Timeline holds events concerning cows (*Animals*, as a general term for f
 and herds (*Groups*, as a general term for collections of animals).
 
 The events concerning these are as follows:
+
 * Membership of an Animal in a Group for a period (start date, and possibly stop date).
 * Lactation event for an Animal for a period (start date, and possibly stop date).
 * Health event for an Animal (condition and condition category, treatment (product) and category, and withholding information).
 
 For a given Group, two reports are available for the Animals that are in that Group over specific periods:
+
 * Cows in Milk: For the current season and the previous season:
   * For each day of that period:
     * How many Animals are in the Group that day and how many of them are in milk.
@@ -104,11 +106,15 @@ Here's an example of the top-level of the report:
 ```
 
 Things to note about this:
+
 + *dateOfReportCreation* is the date-time of when the report was generated.
 + *dimension* specifies that the sub-parts of the report are periods.
 + *completed* is true once the report generation is complete.
+
 Reports involving thousands of animals may take several seconds to complete.
+
 In the meantime, the client can display the data as it is created.
+
 + *_type* specifies that this representation is for a Report.
 + *_kind* gives the specific type of report.
 + *selection* specifies whether an individual herd was selected for the report
@@ -151,6 +157,7 @@ Here's an example of part of the report for a period, the current season:
 ```
 
 Things to note about this:
+
 + *dateRange* gives the range of dates for the period.
 + *totalHealthEventsCount* is the total number of health events (other than 'DRY COW THERAPIES') that occurred within that period
 + *repeatOffendersCount* is the number of animals that had more than one health event within the period.
@@ -186,6 +193,7 @@ Here's an example of part of the report for a condition that occurred within a g
 ```
 
 Things to note about this:
+
 + *conditionCategory* gives the category name of a condition that occurred one or more times during the period.
 + *eventsCount* is the number of health events of that condition category that occurred within that period
 + *numberOfHoursOutOfVat* is the number of hours that an animal did not contribute milk due to the health event.
@@ -298,5 +306,6 @@ And here's an example of a day within a period within the larger report (there i
 ```
 
 Things to note about this:
+
 + *totalCount* is the number of cows in the herd on that day.
 + *inMilkCount* is the number of cows in the herd that are supplying milk on that day.

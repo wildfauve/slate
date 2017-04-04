@@ -14,6 +14,10 @@ The purpose of the authorisation flow is to obtain a "scoped" identity token (_i
 
 <aside class="notice">A Relying Party is the OpenId Connect term for an Oauth2 Client.  This is the system which is requesting access to a user's information.  Relying Parties must be configured with LIC before any authorisation reuqests can be made.</aside>
 
+## Host
+
+The authorisation services are all available via the `identity.mindainfo.io` DNS name.
+
 ## Scopes
 
 Scopes provide a classification of the data types the relying party can request access to, and the user will authorise.  The relying party requests a data access scope through the OAuth2 authorisation request.  
@@ -52,10 +56,10 @@ In all cases, the Identity Service will issue an [OpenId Connect ID Token](http:
 ### Validating the JWT
 
 ```shell
-curl -G https://api.mindainfo.io/oauth/public_key
+curl -G https://identity.mindainfo.io/oauth/public_key
 ```
 
-It is recommended that the relying party validate the token's signature.  The public key can be obtained through an API.  The signature is generated using `RSASSA-PKCS1-v1_5` with the `SHA-256` hash algorithm, known in the token as `RS256`
+It is recommended that the relying party validate the token's signature.  The public key can be obtained through an identity.  The signature is generated using `RSASSA-PKCS1-v1_5` with the `SHA-256` hash algorithm, known in the token as `RS256`
 
 # Authorisation APIs
 
@@ -68,11 +72,11 @@ The grant types supported are:
 ## Authorisation
 
 ```shell
-curl -G "http://api.mindainfo.io/oauth2/authorize"
+curl -G "http://identity.mindainfo.io/oauth2/authorize"
   --data-urlencode "client_id=prwz0y6v8ov7bqhg2jvf8ndll9lhc1l&scope=urn:id:scope:farm_perf&redirect_url=https://example.com/redirect"
 ```
 
-The relying party redirects the user agent to the LIC authorisation endpoint; `https://api.mindainfo.io/oauth2/authorize` with the appropriate authorisation code grant parameters.
+The relying party redirects the user agent to the LIC authorisation endpoint; `https://identity.mindainfo.io/oauth2/authorize` with the appropriate authorisation code grant parameters.
 
 
 ### HTTP Request
@@ -187,7 +191,7 @@ The id_token is carried in the HTTP `AUTHORIZATION` header as a **bearer** token
 
 ```
 GET /resource HTTP/1.1
-Host: api.mindainfo.io
+Host: identity.mindainfo.io
 Authorization: Bearer <id_token>
 ```
 
@@ -263,23 +267,29 @@ context_assertions      | An array of context attributes, mapping activity to sp
 
 ## Logout
 
-Logout acts as a distributed logout.  The user is logged out of Identity, and any other service holding an active authorisation for the user will receive a logout API request indicating that the login has occurred.  The Relying Party should use this service when the user is expecting to be logged out of all services/systems.
+Logout, for a Relying Party, has specific conditions:
 
-The Relying Party that requests the logout does not receive a callback.
+* The Relying Party must have a token representing the user.
+* The User must be logged out from a user agent where the user's LIC session available.  That is, this request can not be set as a API without the user interaction.
+* The request must be a redirect.
 
 
 ### HTTP request
 
 ```
-POST /logout HTTP/1.1
+GET /logout HTTP/1.1
 Host: id.mindainfo.io
 Authentication: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL2lkLmxpYy5jby5ueiIsInN1YiI6ImNlYzY3YWNlLTYwOTgtNGQ5Ny1iZmI2LWIyODAzMmUzMmEzNCIsImF1ZCI6IjUzYmUwZmU3NGQ2MTc0OGVlNTAyMDAwMCIsImV4cCI6MTQ4MzMwODE0OCwiYW1yIjpbXSwiaWF0IjoxNDc4MDM3NzQ4LCJhenAiOiIxZGJmNGJhOC03YzI5LTRkODctYjE2YS1kOGFkZjkwZjkwZTgifQ.xn4rk5SVzWTOmXXDJHBGnKcg_GOPUIo4L0WHcS2l62tDydan3yitg3UYXunFxhb83MgGmfWmSjuntziSBo_y2hTrKnHzjEtyB_0p4QMWOz-7jIGnYtYNVXmtf1Ps3p5kVUn5D5sKoOttP0wlD5TG04P4G7W7y0C8aRCSS5hNOIsXuKf7Fd9B3nCNFWzSGb4Ziu_iDjdFOMCQtk90TkehgRu2eJ8P2LJ30qSA126_-MIAPxlwuXU1qT3OVW6y3rpJq0p1iQriZco1plDiZrFr0BOMmYa5dyCwQT-kQGZdeMV5ZzzF6tysBEEUF-jdaKawJtD_0Rory1SR4WagD0IrxA
 Content-Type: application/x-www-form-urlencoded
 
-redirect_uri=https://example.com/logout
+logout_redirect_uri=https://example.com/logout
 ```
 
 The Relying Party provides:
 
-+ `redirect_uri`; this must be the same as the `logout_endpoint` configured for the client.
-+ `id_token`; the token for the user can be provided as a `Bearer` Token in the `AUTHORIZATION` header or via this property.
++ `logout_redirect_uri`; this must be the same as the `logout_endpoint` configured for the client.
++ `id_token`; the token for the user can be provided as a `Bearer` Token in the `AUTHORIZATION` header or via the `id_token` property within the query parameters.
+
+### HTTP Response
+
+After the logout the user agent is redirected back to the configured `logout_redirect_uri`.  Any errors during the logout are NOT reported to the Relying Party.

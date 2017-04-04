@@ -32,19 +32,19 @@ date            | The date of the measurement; in ISO8601 format.
     "links": [
         {
             "rel": "self",
-            "href": "https://api1.accp.mindainfo.io/pasture-measurement-service/pasture-measurement/place?placeUrl=TestFarm1Url"
+            "href": "https://api.mindainfo.io/pasture-measurement-service/pasture-measurement/place?placeUrl=TestFarm1Url"
         },
         {
             "rel": "up",
-            "href": "https://api1.accp.mindainfo.io/pasture-measurement-service/place/"
+            "href": "https://api.mindainfo.io/pasture-measurement-service/place/"
         },
         {
             "rel": "weighted-mean-cover-search",
-            "href": "https://api1.accp.mindainfo.io/pasture-measurement-service/pasture-measurement/1/weightedMeanCoverSearch"
+            "href": "https://api.mindainfo.io/pasture-measurement-service/pasture-measurement/1/weightedMeanCoverSearch"
         },
         {
             "rel": "weighted-mean-growth-search",
-            "href": "https://api1.accp.mindainfo.io/pasture-measurement-service/pasture-measurement/1/weightedMeanGrowthSearch"
+            "href": "https://api.mindainfo.io/pasture-measurement-service/pasture-measurement/1/weightedMeanGrowthSearch"
         }
     ],
     "_type": "PastureMeasurement",
@@ -61,23 +61,23 @@ date            | The date of the measurement; in ISO8601 format.
     "links": [
         {
             "rel": "self",
-            "href": "https://api1.accp.mindainfo.io/pasture-measurement-service/pasture-measurement/place?placeUrl=TestPaddock1Url"
+            "href": "https://api.mindainfo.io/pasture-measurement-service/pasture-measurement/place?placeUrl=TestPaddock1Url"
         },
         {
             "rel": "up",
-            "href": "https://api1.accp.mindainfo.io/pasture-measurement-service/place/1/place/"
+            "href": "https://api.mindainfo.io/pasture-measurement-service/place/1/place/"
         },
         {
             "rel": "mean-cover-search",
-            "href": "https://api1.accp.mindainfo.io/pasture-measurement-service/pasture-measurement/2/meanCoverSearch"
+            "href": "https://api.mindainfo.io/pasture-measurement-service/pasture-measurement/2/meanCoverSearch"
         },
         {
             "rel": "mean-growth-search",
-            "href": "https://api1.accp.mindainfo.io/pasture-measurement-service/pasture-measurement/2/meanGrowthSearch"
+            "href": "https://api.mindainfo.io/pasture-measurement-service/pasture-measurement/2/meanGrowthSearch"
         },
         {
             "rel": "mean-covers",
-            "href": "https://api1.accp.mindainfo.io/pasture-measurement-service/pasture-measurement/2/meanCover/"
+            "href": "https://api.mindainfo.io/pasture-measurement-service/pasture-measurement/2/meanCover/"
         }
     ],
     "_type": "PastureMeasurement",
@@ -93,28 +93,28 @@ date            | The date of the measurement; in ISO8601 format.
     "links": [
         {
             "rel": "self",
-            "href": "https://api1.accp.mindainfo.io/pasture-measurement-service/pasture-measurement/2/meanCover/"
+            "href": "https://api.mindainfo.io/pasture-measurement-service/pasture-measurement/2/meanCover/"
         },
         {
             "rel": "up",
-            "href": "https://api1.accp.mindainfo.io/pasture-measurement-service/pasture-measurement/2"
+            "href": "https://api.mindainfo.io/pasture-measurement-service/pasture-measurement/2"
         }
     ],
     "items": [
         {
-            "id": "https://api1.accp.mindainfo.io/pasture-measurement-service/meanCover/1",
+            "id": "https://api.mindainfo.io/pasture-measurement-service/meanCover/1",
             "title": 1777
         },
         {
-            "id": "https://api1.accp.mindainfo.io/pasture-measurement-service/meanCover/2",
+            "id": "https://api.mindainfo.io/pasture-measurement-service/meanCover/2",
             "title": 1888
         },
         {
-            "id": "https://api1.accp.mindainfo.io/pasture-measurement-service/meanCover/3",
+            "id": "https://api.mindainfo.io/pasture-measurement-service/meanCover/3",
             "title": 1889
         },
         {
-            "id": "https://api1.accp.mindainfo.io/pasture-measurement-service/meanCover/4",
+            "id": "https://api.mindainfo.io/pasture-measurement-service/meanCover/4",
             "title": 1890
         }
     ],
@@ -129,11 +129,11 @@ date            | The date of the measurement; in ISO8601 format.
     "links": [
         {
             "rel": "self",
-            "href": "https://api1.accp.mindainfo.io/pasture-measurement-service/meanCover/1"
+            "href": "https://api.mindainfo.io/pasture-measurement-service/meanCover/1"
         },
         {
             "rel": "up",
-            "href": "https://api1.accp.mindainfo.io/pasture-measurement-service/pasture-measurement/2/meanCover/"
+            "href": "https://api.mindainfo.io/pasture-measurement-service/pasture-measurement/2/meanCover/"
         }
     ],
     "cover": {
