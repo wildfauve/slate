@@ -76,7 +76,7 @@ curl -G "https://identity.mindainfo.io/oauth/authorize" --data-urlencode "client
 
 ```
 
-The relying party redirects the user agent to the LIC authorisation endpoint; `https://identity.mindainfo.io/oauth2/authorize` with the appropriate authorisation code grant parameters.
+The relying party redirects the user agent to the LIC authorisation endpoint; `https://identity.mindainfo.io/oauth/authorize` with the appropriate authorisation code grant parameters.
 
 
 ### HTTP Request
@@ -100,7 +100,7 @@ redirect_uri  | The uri configured for the relying party prior to authentication
 
 ```shell
 curl -G "https://example.com/redirect"
-  --data-urlencode "code=0d8441e92ba38f59ea7591da908a58cc&scope=urn:id:scope:farm_perf"
+  --data-urlencode "code=0d8441e92ba38f59ea7591da908a58cc" --data-urlencode "scope=urn:id:scope:farm_perf"
 ```
 
 `GET
