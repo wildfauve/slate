@@ -72,8 +72,8 @@ The grant types supported are:
 ## Authorisation
 
 ```shell
-curl -G "http://identity.mindainfo.io/oauth2/authorize"
-  --data-urlencode "client_id=prwz0y6v8ov7bqhg2jvf8ndll9lhc1l&scope=urn:id:scope:farm_perf&redirect_url=https://example.com/redirect"
+curl -G "https://identity.mindainfo.io/oauth/authorize" --data-urlencode "client_id=client1" --data-urlencode "scope=urn:id:scope:farm_perf" --data-urlencode "redirect_uri=https://example.com/redirect" --data-urlencode "response_type=code"
+
 ```
 
 The relying party redirects the user agent to the LIC authorisation endpoint; `https://identity.mindainfo.io/oauth2/authorize` with the appropriate authorisation code grant parameters.
@@ -82,7 +82,7 @@ The relying party redirects the user agent to the LIC authorisation endpoint; `h
 ### HTTP Request
 
 `
-GET /oauth/authorize?client_id=prwz0y6v8ov7bqhg2jvf8ndll9lhc1l&redirect_uri=http://example.com/redirect&response_type=code&scope=urn:id:scope:farm_perf
+GET /oauth/authorize?client_id=client1&redirect_uri=https://example.com/redirect&response_type=code&scope=urn:id:scope:farm_perf&response_type=code
 `
 
 ### Query Parameters
@@ -121,8 +121,8 @@ The relying party exchanges the authorisation code for an ID Token.
 ### HTTP Request
 
 ```
-POST /oauth2/token HTTP/1.1
-Host: id.mindainfo.io
+POST /oauth/token HTTP/1.1
+Host: identity.mindainfo.io
 Authentication: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW
 Content-Type: application/x-www-form-urlencoded
 
@@ -204,7 +204,7 @@ At anytime the Relying Party holding an ID Token can request further claims abou
 
 ```
 GET /userinfo HTTP/1.1
-Host: id.mindainfo.io
+Host: identity.mindainfo.io
 Authentication: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL2lkLmxpYy5jby5ueiIsInN1YiI6ImNlYzY3YWNlLTYwOTgtNGQ5Ny1iZmI2LWIyODAzMmUzMmEzNCIsImF1ZCI6IjUzYmUwZmU3NGQ2MTc0OGVlNTAyMDAwMCIsImV4cCI6MTQ4MzMwODE0OCwiYW1yIjpbXSwiaWF0IjoxNDc4MDM3NzQ4LCJhenAiOiIxZGJmNGJhOC03YzI5LTRkODctYjE2YS1kOGFkZjkwZjkwZTgifQ.xn4rk5SVzWTOmXXDJHBGnKcg_GOPUIo4L0WHcS2l62tDydan3yitg3UYXunFxhb83MgGmfWmSjuntziSBo_y2hTrKnHzjEtyB_0p4QMWOz-7jIGnYtYNVXmtf1Ps3p5kVUn5D5sKoOttP0wlD5TG04P4G7W7y0C8aRCSS5hNOIsXuKf7Fd9B3nCNFWzSGb4Ziu_iDjdFOMCQtk90TkehgRu2eJ8P2LJ30qSA126_-MIAPxlwuXU1qT3OVW6y3rpJq0p1iQriZco1plDiZrFr0BOMmYa5dyCwQT-kQGZdeMV5ZzzF6tysBEEUF-jdaKawJtD_0Rory1SR4WagD0IrxA
 Content-Type: application/x-www-form-urlencoded
 ```
@@ -278,7 +278,7 @@ Logout, for a Relying Party, has specific conditions:
 
 ```
 GET /logout HTTP/1.1
-Host: id.mindainfo.io
+Host: identity.mindainfo.io
 Authentication: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL2lkLmxpYy5jby5ueiIsInN1YiI6ImNlYzY3YWNlLTYwOTgtNGQ5Ny1iZmI2LWIyODAzMmUzMmEzNCIsImF1ZCI6IjUzYmUwZmU3NGQ2MTc0OGVlNTAyMDAwMCIsImV4cCI6MTQ4MzMwODE0OCwiYW1yIjpbXSwiaWF0IjoxNDc4MDM3NzQ4LCJhenAiOiIxZGJmNGJhOC03YzI5LTRkODctYjE2YS1kOGFkZjkwZjkwZTgifQ.xn4rk5SVzWTOmXXDJHBGnKcg_GOPUIo4L0WHcS2l62tDydan3yitg3UYXunFxhb83MgGmfWmSjuntziSBo_y2hTrKnHzjEtyB_0p4QMWOz-7jIGnYtYNVXmtf1Ps3p5kVUn5D5sKoOttP0wlD5TG04P4G7W7y0C8aRCSS5hNOIsXuKf7Fd9B3nCNFWzSGb4Ziu_iDjdFOMCQtk90TkehgRu2eJ8P2LJ30qSA126_-MIAPxlwuXU1qT3OVW6y3rpJq0p1iQriZco1plDiZrFr0BOMmYa5dyCwQT-kQGZdeMV5ZzzF6tysBEEUF-jdaKawJtD_0Rory1SR4WagD0IrxA
 Content-Type: application/x-www-form-urlencoded
 
