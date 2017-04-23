@@ -22,4 +22,4 @@ search: true
 
 # Introduction
 
-Welcome to the LIC MINDAInfo API Documentation.  The documentation is separated into sections describing specific resources.  You should read the Authorisation section first.
+Welcome to the LIC MINDAInfo API Documentation.  The documentation is separated into sections describing specific resources.  You should read the Authentication and Authorisation sections first.
