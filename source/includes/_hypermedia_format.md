@@ -44,7 +44,7 @@ The first field, “links”, is a special one (and is similar to the notion of 
 
 + `self` provides the URL of the given resource.
 + `up` refers to the “owner”, where that makes sense. In this case, the owner is the collection of `NewPlaces`. Another example: a `LactationEvent` may be owned by an Animal. Note that `up` is not concerned with the history of traversal of the graph, but with fixed relationships.
-+ `weighted-mean-cover-search` and `weighted-mean-growth-search` each provide a way of getting metrics for a farm based on a date. This is based on a `search-form`, as discussed in below.
++ `weighted-mean-cover-search` and `weighted-mean-growth-search` each provide a way of getting metrics for a farm based on a date. This is based on a `search-form`, as discussed below.
 + `places` is a link to a collection of `sub-NewPlaces` (paddocks) that are owned by this Customer. This collection (actually called a FeedRepresentation), is a node on the network with a unique URL. In this case the text of the URL happens to include the place details, although that is not necessary.
 + `edit` and `delete` may be provided as a means of editing or deleting the resource. These is not included here as the current user has no the right to change/delete that resource.
 
@@ -117,4 +117,4 @@ Like a LinkedRepresentation, a FeedRepresentation has a set of links. It has the
 
 The “@type” of the feed is either an “Array” or a “Set”. The type of the elements of the collection is defined by the “@itemType”. These two fields are optional.
 
-The “items” field in the example above holds an array of links to each of the elements of the collection, consisting of an `id` that holds a URL and a `title` that holds a string that could be useful to a user when selecting an element to view (although that doesn’t apply to this example). Unlike some microformats, the details of the elements themselves are not (usually) included, but may be embedded for performance reasons. The `items` array may be empty. 
+The “items” field in the example above holds an array of links to each of the elements of the collection, consisting of an `id` that holds a URL and a `title` that holds a string that could be useful to a user when selecting an element to view (although that doesn’t apply to this example). Unlike some microformats, the details of the elements themselves are not (usually) included, but may be embedded for performance reasons. The `items` array may be empty.
