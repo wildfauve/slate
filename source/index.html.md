@@ -10,10 +10,11 @@ toc_footers:
 includes:
   - authorisation
   - hypermedia_format
-  - places
-  - pasture_measurements
+  - root
   - animal_timeline
   - animal_metrics
+  - places
+  - pasture_measurements
   - pasture_metrics
   - errors
 

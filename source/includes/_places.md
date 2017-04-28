@@ -26,7 +26,7 @@ Places may include links to other associated resources; such as pasture measurem
 
 ## Places API
 
-### Root Resource
+### Place Root Resource
 
 `GET /place`
 
@@ -43,9 +43,8 @@ Remember to provide your authorisation token in the `AUTHORIZATION` header.
     },
     {
     "rel": "up",
-    "href": "http://api.mindainfo.io/"
+    "href": "https://api1.mindainfo.io/"
     }
-}
   ],
   "items": [
     {

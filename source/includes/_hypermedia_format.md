@@ -5,7 +5,7 @@ This microformat is used to represent the nodes and arcs in a graph - the networ
 
 ## Link Representation
 
-A Linked Representation is used to represent a resource that corresponds to a single thing, such as a domain object. For example, here is a specific Customer that is accessed by a GET of http://api.example.com/customer/123:
+A Linked Representation is used to represent a resource that corresponds to a single thing, such as a domain object. For example, here is a specific Customer that is accessed by a GET of https://api1.example.com/customer/123:
 
 ```
 {
@@ -13,25 +13,25 @@ A Linked Representation is used to represent a resource that corresponds to a si
     "links": [
         {
             "rel": "self",
-            "href": "http://api.mindainfo.io/pasture-measurement/newPlace/20"
+            "href": "https://api1.mindainfo.io/pasture-measurement/newPlace/20"
         },
         {
             "rel": "up",
-            "href": "http://api.mindainfo.io/pasture-measurement/newPlace/"
+            "href": "https://api1.mindainfo.io/pasture-measurement/newPlace/"
         },
         {
             "rel": "weighted-mean-cover-search",
             "href":
-       "http://api.mindainfo.io/pasture-measurement/newPlace/20/weightedMeanCoverSearch"
+       "https://api1.mindainfo.io/pasture-measurement/newPlace/20/weightedMeanCoverSearch"
         },
         {
             "rel": "weighted-mean-growth-search",
             "href":
-      "http://api.mindainfo.io/pasture-measurement/newPlace/20/weightedMeanGrowthSearch"
+      "https://api1.mindainfo.io/pasture-measurement/newPlace/20/weightedMeanGrowthSearch"
         },
         {
             "rel": "places",
-            "href": "http://api.mindainfo.io/pasture-measurement/newPlace/20/newPlace/"
+            "href": "https://api1.mindainfo.io/pasture-measurement/newPlace/20/newPlace/"
         }
     ],
     "@type":"Customer",
@@ -64,11 +64,11 @@ There is a single entry point to the whole network of data, sometimes called the
     "links": [
         {
             "rel": "self",
-            "href": "http://api.mindainfo.io/pasture-measurement/"
+            "href": "https://api1.mindainfo.io/pasture-measurement/"
         },
         {
             "rel": "places",
-            "href": "http://api.mindainfo.io/pasture-measurement/newPlace/"
+            "href": "https://api1.mindainfo.io/pasture-measurement/newPlace/"
         }
     ],
     "@type":"Api",

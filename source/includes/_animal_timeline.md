@@ -48,19 +48,19 @@ This follows the REST hypermedia microformat documented above.
     "links": [
         {
             "rel": "self",
-            "href": "http://api.mindainfo.io/animal-timeline/group/1"
+            "href": "https://api1.mindainfo.io/animal-timeline/group/1"
         },
         {
             "rel": "up",
-            "href": "http://api.mindainfo.io/animal-timeline/group"
+            "href": "https://api1.mindainfo.io/animal-timeline/group"
         },
         {
             "rel": "cows-in-milk-report",
-            "href": "http://api.mindainfo.io/animal-timeline/group/1/cows-in-milk-report"
+            "href": "https://api1.mindainfo.io/animal-timeline/group/1/cows-in-milk-report"
         },
         {
             "rel": "herd-health-report",
-            "href": "http://api.mindainfo.io/animal-timeline/group/1/herd-health-report"
+            "href": "https://api1.mindainfo.io/animal-timeline/group/1/herd-health-report"
         }
     ],
     "animalGroupId": "5000000",
@@ -100,7 +100,7 @@ Here's an example of how to get a top-level report:
 
     "message": "The Herd Health Report search has been created",
     "status": 201,
-    "id": "http://api.mindainfo.io/animal-timeline/herd-health-report/dB4yoV1brQ"
+    "id": "https://api1.mindainfo.io/animal-timeline/herd-health-report/dB4yoV1brQ"
 }
 ```
 
@@ -113,19 +113,19 @@ Here's an example of how to get a top-level report:
     "links": [
         {
             "rel": "self",
-            "href": "http://api.mindainfo.io/animal-timeline/herd-health-report/dB4yoV1brQ"
+            "href": "https://api1.mindainfo.io/animal-timeline/herd-health-report/dB4yoV1brQ"
         },
         {
             "rel": "up",
-            "href": "http://api.mindainfo.io/animal-timeline/group/1"
+            "href": "https://api1.mindainfo.io/animal-timeline/group/1"
         },
         {
             "rel": "periods",
-            "href": "http://api.mindainfo.io/animal-timeline/herd-health-report/dB4yoV1brQ/period"
+            "href": "https://api1.mindainfo.io/animal-timeline/herd-health-report/dB4yoV1brQ/period"
         },
         {
             "rel": "herd-health-docs",
-            "href": "http://api.mindainfo.io/animal-timeline/herd-health-report/docs/report"
+            "href": "https://api1.mindainfo.io/animal-timeline/herd-health-report/docs/report"
         }
     ],
     "dateOfReportCreation": "2017-01-20T03:58:23+00:00",
@@ -171,19 +171,19 @@ Here's an example of part of the report for a period, the current season:
     "links": [
         {
             "rel": "self",
-            "href": "http://api.mindainfo.io/animal-timeline/herd-health-report/dB4yoV1brQ/period/1"
+            "href": "https://api1.mindainfo.io/animal-timeline/herd-health-report/dB4yoV1brQ/period/1"
         },
         {
             "rel": "up",
-            "href": "http://api.mindainfo.io/animal-timeline/herd-health-report/dB4yoV1brQ/period"
+            "href": "https://api1.mindainfo.io/animal-timeline/herd-health-report/dB4yoV1brQ/period"
         },
         {
             "rel": "conditions",
-            "href": "http://api.mindainfo.io/animal-timeline/herd-health-report/dB4yoV1brQ/period/1/condition-category"
+            "href": "https://api1.mindainfo.io/animal-timeline/herd-health-report/dB4yoV1brQ/period/1/condition-category"
         },
         {
             "rel": "herd-health-period-docs",
-            "href": "http://api.mindainfo.io/animal-timeline/herd-health-report/docs/period"
+            "href": "https://api1.mindainfo.io/animal-timeline/herd-health-report/docs/period"
         }
     ],
     "periodName": "Current Season",
@@ -213,15 +213,15 @@ Here's an example of part of the report for a condition that occurred within a g
     "links": [
         {
             "rel": "self",
-            "href": "http://api.mindainfo.io/animal-timeline/herd-health-report/dB4yoV1brQ/period/1/condition-category/1"
+            "href": "https://api1.mindainfo.io/animal-timeline/herd-health-report/dB4yoV1brQ/period/1/condition-category/1"
         },
         {
             "rel": "up",
-            "href": "http://api.mindainfo.io/animal-timeline/herd-health-report/dB4yoV1brQ/period/1/condition-category"
+            "href": "https://api1.mindainfo.io/animal-timeline/herd-health-report/dB4yoV1brQ/period/1/condition-category"
         },
         {
             "rel": "herd-health-condition-docs",
-            "href": "http://api.mindainfo.io/animal-timeline/herd-health-report/docs/condition-category"
+            "href": "https://api1.mindainfo.io/animal-timeline/herd-health-report/docs/condition-category"
         }
     ],
     "conditionCategory": "Masticillin Rtu Injection",
@@ -265,7 +265,7 @@ Here's an example of how to get a top-level report:
 
     "message": "The Cows In Milk Report search has been created",
     "status": 201,
-    "id": "http://api.mindainfo.io/animal-timeline/cows-in-milk-report/VPbyr3Jxjm"
+    "id": "https://api1.mindainfo.io/animal-timeline/cows-in-milk-report/VPbyr3Jxjm"
 }
 ```
 
@@ -278,19 +278,19 @@ Here's an example of how to get a top-level report:
     "links": [
         {
             "rel": "self",
-            "href": "http://api.mindainfo.io/animal-timeline/cows-in-milk-report/VPbyr3Jxjm"
+            "href": "https://api1.mindainfo.io/animal-timeline/cows-in-milk-report/VPbyr3Jxjm"
         },
         {
             "rel": "up",
-            "href": "http://api.mindainfo.io/animal-timeline/group/1"
+            "href": "https://api1.mindainfo.io/animal-timeline/group/1"
         },
         {
             "rel": "periods",
-            "href": "http://api.mindainfo.io/animal-timeline/cows-in-milk-report/VPbyr3Jxjm/period"
+            "href": "https://api1.mindainfo.io/animal-timeline/cows-in-milk-report/VPbyr3Jxjm/period"
         },
         {
             "rel": "cows-in-milk-docs",
-            "href": "http://api.mindainfo.io/animal-timeline/cows-in-milk-report/docs/report"
+            "href": "https://api1.mindainfo.io/animal-timeline/cows-in-milk-report/docs/report"
         }
     ],
     "dateOfReportCreation": "2017-01-23T03:09:36+00:00",
@@ -318,19 +318,19 @@ Here's an example of part of the report for a period, the current season:
     "links": [
         {
             "rel": "self",
-            "href": "http://api.mindainfo.io/animal-timeline/cows-in-milk-report/VPbyr3Jxjm/period/0"
+            "href": "https://api1.mindainfo.io/animal-timeline/cows-in-milk-report/VPbyr3Jxjm/period/0"
         },
         {
             "rel": "up",
-            "href": "http://api.mindainfo.io/animal-timeline/cows-in-milk-report/VPbyr3Jxjm/period"
+            "href": "https://api1.mindainfo.io/animal-timeline/cows-in-milk-report/VPbyr3Jxjm/period"
         },
         {
             "rel": "days",
-            "href": "http://api.mindainfo.io/animal-timeline/cows-in-milk-report/VPbyr3Jxjm/period/0/day"
+            "href": "https://api1.mindainfo.io/animal-timeline/cows-in-milk-report/VPbyr3Jxjm/period/0/day"
         },
         {
             "rel": "cows-in-milk-period-docs",
-            "href": "http://api.mindainfo.io/animal-timeline/cows-in-milk-report/docs/period"
+            "href": "https://api1.mindainfo.io/animal-timeline/cows-in-milk-report/docs/period"
         }
     ],
     "periodName": "Current Season",
@@ -350,15 +350,15 @@ And here's an example of a day within a period within the larger report (there i
     "links": [
         {
             "rel": "self",
-            "href": "http://api.mindainfo.io/animal-timeline/cows-in-milk-report/VPbyr3Jxjm/period/0/day/0"
+            "href": "https://api1.mindainfo.io/animal-timeline/cows-in-milk-report/VPbyr3Jxjm/period/0/day/0"
         },
         {
             "rel": "up",
-            "href": "http://api.mindainfo.io/animal-timeline/cows-in-milk-report/VPbyr3Jxjm/period/0/day"
+            "href": "https://api1.mindainfo.io/animal-timeline/cows-in-milk-report/VPbyr3Jxjm/period/0/day"
         },
         {
             "rel": "cows-in-milk-day-docs",
-            "href": "http://api.mindainfo.io/animal-timeline/cows-in-milk-report/docs/day"
+            "href": "https://api1.mindainfo.io/animal-timeline/cows-in-milk-report/docs/day"
         }
     ],
     "totalCount": 200,
@@ -384,39 +384,39 @@ Things to note about this:
     "links": [
         {
             "rel": "self",
-            "href": "http://api.mindainfo.io/animal-timeline/animal/1"
+            "href": "https://api1.mindainfo.io/animal-timeline/animal/1"
         },
         {
             "rel": "up",
-            "href": "http://api.mindainfo.io/animal-timeline/animal/"
+            "href": "https://api1.mindainfo.io/animal-timeline/animal/"
         },
         {
             "rel": "herd-events",
-            "href": "http://api.mindainfo.io/animal-timeline/animal/1/herd-event/"
+            "href": "https://api1.mindainfo.io/animal-timeline/animal/1/herd-event/"
         },
         {
             "rel": "in-milk-events",
-            "href": "http://api.mindainfo.io/animal-timeline/animal/1/in-milk-event/"
+            "href": "https://api1.mindainfo.io/animal-timeline/animal/1/in-milk-event/"
         },
         {
             "rel": "health-condition-events",
-            "href": "http://api.mindainfo.io/animal-timeline/animal/1/health-condition-event/"
+            "href": "https://api1.mindainfo.io/animal-timeline/animal/1/health-condition-event/"
         },
         {
             "rel": "calving-events",
-            "href": "http://api.mindainfo.io/animal-timeline/animal/1/calving-event/"
+            "href": "https://api1.mindainfo.io/animal-timeline/animal/1/calving-event/"
         },
         {
             "rel": "mating-events",
-            "href": "http://api.mindainfo.io/animal-timeline/animal/1/mating-event/"
+            "href": "https://api1.mindainfo.io/animal-timeline/animal/1/mating-event/"
         },
         {
             "rel": "heat-events",
-            "href": "http://api.mindainfo.io/animal-timeline/animal/1/heat-event/"
+            "href": "https://api1.mindainfo.io/animal-timeline/animal/1/heat-event/"
         },
         {
             "rel": "pregnancy-diagnosis-events",
-            "href": "http://api.mindainfo.io/animal-timeline/animal/1/pregnancy-diagnosis-event/"
+            "href": "https://api1.mindainfo.io/animal-timeline/animal/1/pregnancy-diagnosis-event/"
         }
     ],
     "animalKey": 111,
@@ -438,11 +438,11 @@ Things to note about this:
     "links": [
         {
             "rel": "self",
-            "href": "http://api.mindainfo.io/animal-timeline/in-milk-event/1"
+            "href": "https://api1.mindainfo.io/animal-timeline/in-milk-event/1"
         },
         {
             "rel": "up",
-            "href": "http://api.mindainfo.io/animal-timeline/animal/65/in-milk-event/"
+            "href": "https://api1.mindainfo.io/animal-timeline/animal/65/in-milk-event/"
         }
     ],
     "dateOfEventCreation": "2016-10-31T01:00:05.978177+00:00",
@@ -466,11 +466,11 @@ Things to note about this:
     "links": [
         {
             "rel": "self",
-            "href": "http://api.mindainfo.io/animal-timeline/health-condition-event/1"
+            "href": "https://api1.mindainfo.io/animal-timeline/health-condition-event/1"
         },
         {
             "rel": "up",
-            "href": "http://api.mindainfo.io/animal-timeline/animal/65/health-condition-event/"
+            "href": "https://api1.mindainfo.io/animal-timeline/animal/65/health-condition-event/"
         }
     ],
     "dateOfEventCreation": "2016-10-02T11:00:00.000000+00:00",
@@ -500,11 +500,11 @@ Things to note about this:
     "links": [
         {
             "rel": "self",
-            "href": "http://api.mindainfo.io/animal-timeline/mating-event/1"
+            "href": "https://api1.mindainfo.io/animal-timeline/mating-event/1"
         },
         {
             "rel": "up",
-            "href": "http://api.mindainfo.io/animal-timeline/animal/65/mating-event/"
+            "href": "https://api1.mindainfo.io/animal-timeline/animal/65/mating-event/"
         }
     ],
     "dateOfEventCreation": "2016-09-03T12:00:00.000000+00:00",
@@ -532,11 +532,11 @@ Things to note about this:
     "links": [
         {
             "rel": "self",
-            "href": "http://api.mindainfo.io/animal-timeline/pregnancy-diagnosis-event/1"
+            "href": "https://api1.mindainfo.io/animal-timeline/pregnancy-diagnosis-event/1"
         },
         {
             "rel": "up",
-            "href": "http://api.mindainfo.io/animal-timeline/animal/65/pregnancy-diagnosis-event/"
+            "href": "https://api1.mindainfo.io/animal-timeline/animal/65/pregnancy-diagnosis-event/"
         }
     ],
     "dateOfEventCreation": "2016-09-03T12:00:00.000000+00:00",
